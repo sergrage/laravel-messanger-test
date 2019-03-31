@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    <a href="{{ route('messages') }}" class="btn btn-info">Messanger</a>
                 </div>
             </div>
         </div>

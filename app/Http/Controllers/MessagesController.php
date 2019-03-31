@@ -10,6 +10,11 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
+
+
+use Illuminate\Support\Facades\DB;
+
+
 class MessagesController extends Controller
 {
     /**
@@ -19,6 +24,10 @@ class MessagesController extends Controller
      */
     public function index()
     {
+    	// $users = DB::table('users')
+     //                ->whereNotIn('id', [1])
+     //                ->get();
+     //    dd($users);
         // All threads, ignore deleted/archived participants
         $threads = Thread::getAllLatest()->get();
         // All threads that user is participating in
